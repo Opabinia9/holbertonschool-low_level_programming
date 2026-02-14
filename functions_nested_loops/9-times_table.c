@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_dd - function for printing double and single
+ * digit numbers with _putchar
+ * @n: number to print
+ */
 void print_dd(int n)
 {
 	if (n < 10)
@@ -7,19 +12,20 @@ void print_dd(int n)
 		_putchar(' ');
 		_putchar(n + '0');
 	}
-	else 
+	else
 	{
 		_putchar((n / 10) + '0');
 		_putchar((n % 10) + '0');
 	}
 }
 /**
+ * times_table - prints the times tables up to 9
  */
 void times_table(void)
 {
 	int c, n, r;
-	c = 0;
 
+	c = 0;
 	while (c < 10)
 	{
 		n = r = 0;
@@ -35,7 +41,7 @@ void times_table(void)
 				_putchar(' ');
 				print_dd(r);
 			}
-			r+=c;
+			r += c;
 			n++;
 		}
 		_putchar('\n');
