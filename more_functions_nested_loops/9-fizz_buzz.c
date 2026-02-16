@@ -2,9 +2,9 @@
 
 /**
  * main - main function, (hopefully) passes the fizzbuzz test
- * Return - main always returns 0 on succsess
+ * Return: main always returns 0 on succsess
  */
-int main (void)
+int main(void)
 {
 	int n = 1;
 
