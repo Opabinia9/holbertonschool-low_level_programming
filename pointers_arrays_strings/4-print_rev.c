@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _strlen - returns the length of a given string
  * @s: string to check
@@ -24,13 +24,13 @@ void print_rev(char *s)
 {
 	int a;
 
-	if (s == "")
+	a = _strlen(s);
+	if (s[0] == '\0')
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		a = _strlen(s);
 		do {
 			a--;
 			_putchar(s[a]);
