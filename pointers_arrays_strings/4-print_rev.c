@@ -24,10 +24,17 @@ void print_rev(char *s)
 {
 	int a;
 
-	a = _strlen(s);
-	do {
-		a--;
-		_putchar(s[a]);
-	} while (a != 0);
-	_putchar('\n');
+	if (s == "")
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		a = _strlen(s);
+		do {
+			a--;
+			_putchar(s[a]);
+		} while (a != 0);
+		_putchar('\n');
+	}
 }
