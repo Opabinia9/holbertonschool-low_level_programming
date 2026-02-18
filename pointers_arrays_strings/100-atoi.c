@@ -28,6 +28,12 @@ int _atoi(char *s)
 		}
 		x++;
 	}
-	
-	return (res);
+	if (res == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (res);
+	}
 }
