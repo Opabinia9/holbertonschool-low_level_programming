@@ -21,17 +21,15 @@ int _strlen(char *s)
  */
 void rev_string(char *s)
 {
-	if (!s)
-	{
-	}
-	else
-	{
-		int x = 0;
-		int y = _strlen(s) - 1;
+	int x = 0;
+	int y = _strlen(s) - 1;
+	char c;
 
+	if (s)
+	{
 		while (x < y)
 		{
-			char c = s[x];
+			c = s[x];
 			s[x] = s[y];
 			s[y] = c;
 			x++;
