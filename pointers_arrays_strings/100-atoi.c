@@ -8,11 +8,10 @@
 int _atoi(char *s)
 {
 	int m = 0;
-	int p = 0;
 	int res = 0;
 	int x = 0;
 
-	while (s[x] != '\0')
+	while (s[x])
 	{
 		if (s[x] >= '0' && s[x] <= '9')
 		{
@@ -26,18 +25,13 @@ int _atoi(char *s)
 		{
 			m++;
 		}
-		else if (s[x] == '+')
-		{
-			p++;
-		}
 		x++;
 	}
-
 	if (res == 0)
 	{
 		return (0);
 	}
-	else if (p >= m)
+	else if (!(m%2))
 	{
 		return (res);
 	}
