@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * _strcpy -
- * @src:
- * @dest:
+ * _strcpy - copies the src string to the dest string
+ * @src: string to copy
+ * @dest: string to copy to
+ * Return: the pointer to dest
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -13,7 +14,7 @@ char *_strcpy(char *dest, char *src)
 	while (src[x] != '\0')
 	{
 		dest[x] = src[x];
-		x++;	
+		x++;
 	}
 	dest[x] = src[x];
 	return (dest);
