@@ -22,19 +22,26 @@ void puts_half(char *str)
 {
 	int x;
 
-	x = _strlen(str);
-	if (x % 2 == 0)
+	if (!str)
 	{
-		x = x / 2;
+		_putchar(str[0]);
 	}
 	else
 	{
-		x = (x + 1) / 2;
-	}
-	while (str[x] != '\0')
-	{
-		_putchar(str[x]);
-		x++;
+		x = _strlen(str);
+		if (x % 2 == 0)
+		{
+			x = x / 2;
+		}
+		else
+		{
+			x = (x + 1) / 2;
+		}
+		while (str[x] != '\0')
+		{
+			_putchar(str[x]);
+			x++;
+		}
 	}
 	_putchar('\n');
 }
