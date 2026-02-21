@@ -20,6 +20,7 @@ int _strlen(char *s)
  * _strncat - concatinate src to dest using max of n from src
  * @dest: string to add to
  * @src: string to add to dest
+ * @n: max to take from src
  * Return: the pointer to dest
  */
 char *_strncat(char *dest, char *src, int n)
