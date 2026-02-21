@@ -1,6 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
+ * _strcmp - compairs ascii values of a string and returns the first diff
+ * @s1: the first value to compair
+ * @s2: the second string to compair
+ * Return: the diffrence in ascii value
  */
 int _strcmp(char *s1, char *s2)
 {
