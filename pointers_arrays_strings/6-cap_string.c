@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * cap_string - capitalizes all words of a string
  * @s: string to capitalize
@@ -7,33 +6,34 @@
  */
 char *cap_string(char *s)
 {
-	int i = 0;
+	int i;
 	int x = 0;
 	int word = 0;
-	char delimiter[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	int del = 0;
+	char delimiter[];
 
+	delimiter = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 	while (s[x])
 	{
-		if ((s[x] >= 'A' && s[x] <= 'Z') || (s[x] >= 'a' && s[x] <= 'z'))
+		i = 0;
+		while (delimiter[i])
 		{
-			if (!word && (s[x] >= 'a' && s[x] <= 'z'))
+			del = 0;
+			if (s[x] == delimiter[i])
+			{
+				word = 1;
+				del = 1;
+				break;
+			}
+			i++;
+		}
+		if (!del)
+		{
+			if (word == 1 && (s[x] >= 'a' && s[x] <= 'z'))
 			{
 				s[x] = s[x] - 32;
 			}
-			word = 1;
-			i = 0;
-		}
-		else
-		{
-			while(delimiter[i])
-			{
-				if (s[x] == delimiter[i])
-				{
-					word = 0;
-					break;
-				}
-				i++;
-			}
+			word++;
 		}
 		x++;
 	}
