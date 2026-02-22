@@ -1,6 +1,9 @@
 #include "main.h"
 
 /**
+ * leet - functions to replace letters acording to leet
+ * @s: string to change
+ * Return: pointer to s
  */
 char *leet(char *s)
 {
