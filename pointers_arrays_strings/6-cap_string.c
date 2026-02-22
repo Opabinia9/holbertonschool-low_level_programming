@@ -7,8 +7,10 @@
  */
 char *cap_string(char *s)
 {
+	int i = 0;
 	int x = 0;
 	int word = 0;
+	char delimiter[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
 	while (s[x])
 	{
@@ -19,10 +21,19 @@ char *cap_string(char *s)
 				s[x] = s[x] - 32;
 			}
 			word = 1;
+			i = 0;
 		}
 		else
 		{
-			word = 0;
+			while(delimiter[i])
+			{
+				if (s[x] == delimiter[i])
+				{
+					word = 0;
+					break;
+				}
+				i++;
+			}
 		}
 		x++;
 	}
