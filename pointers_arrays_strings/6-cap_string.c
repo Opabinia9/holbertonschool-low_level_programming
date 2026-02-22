@@ -10,16 +10,15 @@ char *cap_string(char *s)
 	int x = 0;
 	int word = 0;
 	int del = 0;
-	char delimiter[];
+	char d[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
-	delimiter = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 	while (s[x])
 	{
 		i = 0;
-		while (delimiter[i])
+		while (d[i])
 		{
 			del = 0;
-			if (s[x] == delimiter[i])
+			if (s[x] == d[i])
 			{
 				word = 1;
 				del = 1;
