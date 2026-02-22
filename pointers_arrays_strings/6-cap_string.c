@@ -8,7 +8,7 @@ char *cap_string(char *s)
 {
 	int i;
 	int x = 0;
-	int word = 0;
+	int word = 1;
 	int del = 0;
 	char d[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
