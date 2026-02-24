@@ -1,7 +1,10 @@
 #include "main.h"
 
 /**
- * _strpbrk -
+ * _strpbrk - find the first match in s from accept
+ * @s: string to search
+ * @accept: list of characters to search for
+ * Return: pointer to first match in s
  */
 char *_strpbrk(char *s, char *accept)
 {
@@ -22,6 +25,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 		x++;
 	}
-	res = s[x] == accept[y] ? &s[x] : '\0';
-	return (res);
+	return ('\0');
 }
