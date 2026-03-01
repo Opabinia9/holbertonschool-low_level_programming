@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+
 /**
  * main - adds numbers in command line arguments
  * @argc: number of command line arguments
  * @argv: array of command line argumnets
- * Return: sum of numbers
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		printf("Error\n");
+		printf("0\n");
 		return (1);
 	}
 
