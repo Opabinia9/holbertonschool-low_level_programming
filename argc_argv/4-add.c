@@ -11,7 +11,8 @@
 int main(int argc, char *argv[])
 {
 	int n = 1;
-	int i, x, y;
+	int i = 0
+	int x, y;
 
 	if (argc < 2)
 	{
