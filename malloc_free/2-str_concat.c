@@ -26,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	arr = (char *)malloc((n + i) * sizeof(*arr));
 	if (!arr)
 	{
-		return ('n');
+		return ('\0');
 	}
 	while (*s1)
 	{
