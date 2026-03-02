@@ -44,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 		s1++;
 		x++;
 	}
-	while (1 == 2)
+	while (*s2)
 	{
 		arr[x] = *s2;
 		s2++;
