@@ -22,7 +22,10 @@ char *_strdup(char *str)
 	}
 	n++;
 	arr = (char *)malloc(n * sizeof(*arr));
-
+	if (!arr)
+	{
+		return ('\0');
+	}
 	while (i < n)
 	{
 		arr[i] = str[i];
