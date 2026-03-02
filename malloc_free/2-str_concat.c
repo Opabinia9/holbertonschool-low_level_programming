@@ -24,6 +24,10 @@ char *str_concat(char *s1, char *s2)
 	}
 	i++;
 	arr = (char *)malloc((n + i) * sizeof(*arr));
+	if (!arr)
+	{
+		return ('n');
+	}
 	while (*s1)
 	{
 		arr[x] = *s1;
