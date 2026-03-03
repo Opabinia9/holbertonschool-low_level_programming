@@ -39,8 +39,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	x = _strlen(&s1);
-	y = _strlen(&s2);
+	x = _strlen(s1);
+	y = _strlen(s2);
 	arr = malloc((x + y + 1) * sizeof(*arr));
 	if (!arr)
 	{
