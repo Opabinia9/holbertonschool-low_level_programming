@@ -26,7 +26,7 @@ int _strlen(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, x, y;
+	int i, x;
 	unsigned int m;
 	char *arr;
 
@@ -40,8 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	x = _strlen(s1);
-	y = _strlen(s2);
-	arr = malloc((x + y + 1) * sizeof(*arr));
+	arr = malloc((x + n + 1) * sizeof(*arr));
 	if (!arr)
 	{
 		return (NULL);
