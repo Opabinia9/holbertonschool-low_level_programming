@@ -2,19 +2,14 @@
 #include <stdlib.h>
 
 /**
- * string_parser - parse a string,
- * replacing null with "" and returning it's length
- * @s: string to parse
+ * _strlen - find the length of a string
+ * @s: string to check
  * Return: length of string
  */
-int string_parser(char *s)
+int _strlen(char *s)
 {
 	int n = 0;
 
-	if (s == NULL)
-	{
-		s = "";
-	}
 	while (s[n])
 	{
 		n++;
@@ -31,12 +26,21 @@ int string_parser(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int x = string_parser(s1);
-	int y = string_parser(s2);
-	int i;
+	int i, x, y;
 	unsigned int m;
 	char *arr;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
+	x = _strlen(s1);
+	y = _strlen(s2);
 	arr = malloc((x + y + 1) * sizeof(*arr));
 
 	i = 0;
