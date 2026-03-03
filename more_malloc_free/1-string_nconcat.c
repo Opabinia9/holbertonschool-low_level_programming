@@ -40,9 +40,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	x = _strlen(s1);
-	y = _strlen(s2);
+	y = _strlen(&s2);
 	arr = malloc((x + y + 1) * sizeof(*arr));
-
+	if (!arr)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (s1[i])
 	{
