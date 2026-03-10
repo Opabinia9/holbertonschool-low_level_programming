@@ -1,10 +1,11 @@
 #include <stddef.h>
 
 /**
- * int_index - fint index of first match by cmp in array
+ * int_index - find index of first match by cmp in array
  * @array: array to check
  * @size: size of array
  * @cmp: checker
+ * Return: index of first match
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
