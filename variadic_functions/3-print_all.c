@@ -19,7 +19,6 @@ void print_all(const char * const format, ...)
 
 	va_start(varg, format);
 	i = 0;
-
 	while (format[i])
 	{
 		n = 0;
@@ -37,6 +36,7 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
+	va_end(varg);
 	printf("\n");
 }
 
@@ -70,6 +70,9 @@ void fprint(va_list vargf)
  */
 void sprint(va_list vargs)
 {
-	printf("%s", va_arg(vargs, char *));
+	char *s = va_arg(vargs, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
 }
 
