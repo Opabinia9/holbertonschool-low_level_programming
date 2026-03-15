@@ -7,6 +7,7 @@
 void print_all(const char * const format, ...)
 {
 	int i, n;
+	char x[3] = {'\0', '\0', '\0'};
 	va_list varg;
 	op_t ops[] = {
 		{"c", cprint},
@@ -18,13 +19,20 @@ void print_all(const char * const format, ...)
 
 	va_start(varg, format);
 	i = 0;
+
 	while (format[i])
 	{
 		n = 0;
 		while (ops[n].op)
 		{
 			if (format[i] == ops[n].op[0])
+			{
+				printf("%s", x);
 				ops[n].f(varg);
+				x[0] = ',';
+				x[1] = ' ';
+				break;
+			}
 			n++;
 		}
 		i++;
