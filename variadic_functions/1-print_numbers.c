@@ -7,16 +7,16 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i  = 0;
+	unsigned int i  = 1;
 	va_list varg;
 
 	va_start(varg, n);
-
 	while (i < n)
 	{
 		printf("%d%s", va_arg(varg, int), separator);
 		i++;
 	}
+	printf("%d\n", va_arg(varg, int));
 
 	va_end(varg);
 }
