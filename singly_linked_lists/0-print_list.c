@@ -54,6 +54,13 @@ char *itoa(int n)
 	int i;
 	char *str;
 
+	if (!n)
+	{
+		str = malloc(2 * sizeof(*str));
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
 	for (i = n; i; i /= 10)
 		count++;
 	str =  malloc((count + 1) * sizeof(*str));
