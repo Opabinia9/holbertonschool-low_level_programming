@@ -19,9 +19,11 @@ size_t print_list(const list_t *h)
 		}
 		else
 		{
-			index[1] = '0' + h->len; 
-			for (i = 0; index[i]; i++)
-				_putchar(index[i]);
+			_putchar('[');
+			for (i = h->len; i; i /= 10)
+				_putchar('0' + (i%10));
+			_putchar(']');
+			_putchar(' ');
 			for (i = 0; h->str[i]; i++)
 				_putchar(h->str[i]);
 		}
