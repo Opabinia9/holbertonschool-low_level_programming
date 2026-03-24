@@ -5,6 +5,7 @@ size_t print_list(const list_t *h)
 	unsigned int i;
 	int n = 0;
 	char *nil = "(nil)";
+	char *str;
 
 	while (h)
 	{
@@ -20,8 +21,10 @@ size_t print_list(const list_t *h)
 		else
 		{
 			_putchar('[');
-			for (i = h->len; i; i /= 10)
-				_putchar('0' + (i%10));
+			str = itoa(h->len);
+			for (i = 0; str[i]; i++)
+				_putchar(str[i]);
+			free(str);
 			_putchar(']');
 			_putchar(' ');
 			for (i = 0; h->str[i]; i++)
@@ -33,4 +36,21 @@ size_t print_list(const list_t *h)
 	}
 
 	return (n);
+}
+
+char *itoa(int n)
+{
+	int count = 0;
+	int i;
+	char *str;
+
+	for (i = n; i; i /= 10)
+		count++;
+	str =  malloc((count + 1) * sizeof(*str));
+	if (!str)
+		return (NULL);
+	str[count] = '\0';
+	for (i = n; i; i /= 10)
+		str[--count] = '0' + i;
+	return (str);
 }
