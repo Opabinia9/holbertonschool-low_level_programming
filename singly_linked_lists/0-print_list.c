@@ -1,5 +1,10 @@
 #include "lists.h"
 
+/**
+ * print_list - print a linked list
+ * @h: list to print
+ * Return: length of list
+ */
 size_t print_list(const list_t *h)
 {
 	unsigned int i;
@@ -38,6 +43,11 @@ size_t print_list(const list_t *h)
 	return (n);
 }
 
+/**
+ * itoa - convert an int to a string
+ * @n: int to convert
+ * Return: pointer to string
+ */
 char *itoa(int n)
 {
 	int count = 0;
