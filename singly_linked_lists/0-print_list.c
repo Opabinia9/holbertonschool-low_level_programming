@@ -61,6 +61,6 @@ char *itoa(int n)
 		return (NULL);
 	str[count] = '\0';
 	for (i = n; i; i /= 10)
-		str[--count] = '0' + i;
+		str[--count] = '0' + i % 10;
 	return (str);
 }
