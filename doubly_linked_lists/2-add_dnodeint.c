@@ -10,8 +10,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *node = malloc(sizeof(dlistint_t));
 
-	node->next = *head;
 	node->n = n;
+	if (head)
+		node->next = *head;
+	else
+		node->next = NULL;
 	*head = node;
 	return (*head);
 }
