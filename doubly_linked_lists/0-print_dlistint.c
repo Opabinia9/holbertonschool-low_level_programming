@@ -8,13 +8,47 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	int count = 0;
+	int i = 0;
+	char *str;
 
 	while (h)
 	{
-		_putchar('0' + h->n);
+		str = itoa(h->n);
+		for (i = 0; str[i]; i++)
+			_putchar(str[i]);
+		free(str);
 		_putchar('\n');
 		h = h->next;
 		count++;
 	}
 	return (count);
+}
+
+/**
+ * itoa - convert an int to a string
+ * @n: int to convert
+ * Return: pointer to string
+ */
+char *itoa(int n)
+{
+	int count = 0;
+	int i;
+	char *str;
+
+	if (!n)
+	{
+		str = malloc(2 * sizeof(*str));
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
+	for (i = n; i; i /= 10)
+		count++;
+	str =  malloc((count + 1) * sizeof(*str));
+	if (!str)
+		return (NULL);
+	str[count] = '\0';
+	for (i = n; i; i /= 10)
+		str[--count] = '0' + i % 10;
+	return (str);
 }
