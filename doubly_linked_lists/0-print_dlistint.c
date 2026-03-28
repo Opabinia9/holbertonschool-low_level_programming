@@ -42,7 +42,7 @@ char *itoa(int n)
 		str[1] = '\0';
 	}
 	else if (n < 0)
-	{	
+	{
 		n *= -1;
 		for (i = n; i; i /= 10)
 			count++;
