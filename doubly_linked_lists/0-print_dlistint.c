@@ -40,15 +40,31 @@ char *itoa(int n)
 		str = malloc(2 * sizeof(*str));
 		str[0] = '0';
 		str[1] = '\0';
-		return (str);
 	}
-	for (i = n; i; i /= 10)
+	else if (n < 0)
+	{	
+		n *= -1;
+		for (i = n; i; i /= 10)
+			count++;
 		count++;
-	str =  malloc((count + 1) * sizeof(*str));
-	if (!str)
-		return (NULL);
-	str[count] = '\0';
-	for (i = n; i; i /= 10)
-		str[--count] = '0' + i % 10;
+		str =  malloc((count + 1) * sizeof(*str));
+		if (!str)
+			return (NULL);
+		str[count] = '\0';
+		for (i = n; i; i /= 10)
+			str[--count] = '0' + i % 10;
+		str[0] = '-';
+	}
+	else
+	{
+		for (i = n; i; i /= 10)
+			count++;
+		str =  malloc((count + 1) * sizeof(*str));
+		if (!str)
+			return (NULL);
+		str[count] = '\0';
+		for (i = n; i; i /= 10)
+			str[--count] = '0' + i % 10;
+	}
 	return (str);
 }
