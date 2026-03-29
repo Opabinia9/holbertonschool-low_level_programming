@@ -12,22 +12,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *node;
 	dlistint_t *head = *h;
-	dlistint_t *prev = NULL;
 
-	while (i < idx)
+	while (i < (idx - 1))
 	{
+		head = head->next;
 		if (!head)
 			return (NULL);
-		prev = head;
-		head = head->next;
 		i++;
 	}
 	node = malloc(sizeof(dlistint_t));
 	if (!node)
 		return (NULL);
 	node->n = n;
-	node->next = head;
-	node->prev = prev;
+	node->next = head->next;
+	node->prev = head;
 	if (node->prev)
 		node->prev->next = node;
 	if (node->next)
