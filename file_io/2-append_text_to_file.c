@@ -1,7 +1,10 @@
 #include "main.h"
 
 /**
-where filename is the name of the file and text_content is the NULL terminated string to add at the end of the file
+ * append_text_to_file - append text to existing file
+ * @filename: name of the file
+ * @text_content: NULL terminated string to add at the end of the file
+ * Return: 1 on success else -1
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
