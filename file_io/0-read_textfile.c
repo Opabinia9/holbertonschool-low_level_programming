@@ -1,6 +1,10 @@
 #include "main.h"
 
 /**
+ * read_textfile - read a file to STDOUT
+ * @filename: name of file to print
+ * @letters: number of letters to read
+ * Return: number of charaters written
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -27,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	w = write(1, buf, r);
+	w = write(STDOUT_FILENO, buf, r);
 	if (w != r)
 	{
 		free(buf);
