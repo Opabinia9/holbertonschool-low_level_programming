@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *node;
 	dlistint_t *head = *h;
 
-	while (i < (idx - 1))
+	while (i < (idx - 1) && idx > 0)
 	{
 		head = head->next;
 		if (!head)
