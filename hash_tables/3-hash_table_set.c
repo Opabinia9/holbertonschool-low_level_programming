@@ -31,7 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		lhead = ht->array[idx];
 		while (lhead != NULL)
 		{
-			if (lhead->key == key)
+			if (!strcmp(lhead->key, key))
 			{
 				lhead->value = node->value;
 				free(node);
