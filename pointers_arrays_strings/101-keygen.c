@@ -16,10 +16,10 @@ int main(void)
 	srand(time(NULL));
 	while (asc > 64)
 	{
-		c = (((rand() % 95) % asc) + 32);
+		c = (((rand() % 26) % asc) + 65);
 		asc -= c;
-		printf("%c", c);
+		putchar(c);
 	}
-	printf("%c", asc);
+	putchar(asc);
 	return (0);
 }
